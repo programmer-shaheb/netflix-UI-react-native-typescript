@@ -1,27 +1,21 @@
-import * as React from 'react';
-import { Image, FlatList } from 'react-native';
-import { Text, View } from '../../components/Themed';
-import styles from './styles';
-import categories from '../../assets/data/categories';
-
-const firstCategory = categories.items[0]
-
-const  HomeScreen = () => {
+import * as React from "react";
+import { Image, FlatList } from "react-native";
+import { Text, View } from "../../components/Themed";
+import styles from "./styles";
+import categories from "../../assets/data/categories";
+import HomeCategory from "../../components/HomeCategory";
 
 
+
+const HomeScreen = () => {
   return (
     <View style={styles.container}>
-<FlatList
- data={firstCategory.movies}
- renderItem={(item) => <Image 
-  style={styles.image}
-  source={{
-  uri: "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/netflix/movie1.jpg"
-}}
-/>}
-/>
+      <FlatList
+      data={categories.items}
+      renderItem={({item}) => <HomeCategory category={item} />}
+      />
     </View>
   );
-}
+};
 
-export default HomeScreen
+export default HomeScreen;

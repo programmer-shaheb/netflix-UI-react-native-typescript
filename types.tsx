@@ -17,6 +17,7 @@ Downloads: undefined;
 
 export type HomeParamList = {
   HomeScreen: undefined;
+  MovieDetailsScreen: undefined;
 };
 
 export type TabTwoParamList = {
